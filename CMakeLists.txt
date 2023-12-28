@@ -95,11 +95,12 @@ set(${PROJECT_NAME}_SOURCE_FILES
   src/utils.cpp
   # ! Add source files here
 )
-
+message(STATUS "${PROJECT_NAME}_AAA: ${PROJECT_NAME}_SOURCE_FILES")
 # ! If you want to make a library, use the following code
 add_library(${PROJECT_NAME} STATIC
   ${${PROJECT_NAME}_SOURCE_FILES}
 )
+message(STATUS "${PROJECT_NAME}_BBB: ${PROJECT_NAME} STATIC ${${PROJECT_NAME}_SOURCE_FILES}")
 
 # ! If you want to make an executable, use the following code
 # add_executable(${PROJECT_NAME}
@@ -108,10 +109,11 @@ add_library(${PROJECT_NAME} STATIC
 
 # ! If you want to add include directories and link libraries, use the following code
 target_include_directories(${PROJECT_NAME} PUBLIC
-${${PROJECT_NAME}_INCLUDE_PATH}
+  ${${PROJECT_NAME}_INCLUDE_PATH}
 
 # ! Add include path here
 )
+message(STATUS "${PROJECT_NAME}_CCC: ${PROJECT_NAME} PUBLIC ${${PROJECT_NAME}_INCLUDE_PATH}")
 # target_link_libraries(${PROJECT_NAME} PRIVATE
 
 # ! Add libraries here
@@ -123,6 +125,7 @@ ${${PROJECT_NAME}_INCLUDE_PATH}
 target_compile_options(${PROJECT_NAME} PRIVATE
   ${CPP_COMFILE_FLAGS}
 )
+message(STATUS "${PROJECT_NAME}_DDD: ${PROJECT_NAME} PRIVATE ${CPP_COMFILE_FLAGS}")
 # include(cmake/create_documents.cmake)
 
 add_subdirectory(${${PROJECT_NAME}_TEST_PATH})
