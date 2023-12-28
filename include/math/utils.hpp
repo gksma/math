@@ -6,8 +6,9 @@
 
 namespace gksma::math {
 // Add, Subtract, Multiply, Divide
-
+    auto Add(double lhs, double rhs) -> double;
 // IsEqual
+    auto IsEqual(double lhs, double rhs) -> bool;
 }   // namespace gksma::math
 
 #endif
