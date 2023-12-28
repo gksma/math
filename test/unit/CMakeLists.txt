@@ -4,7 +4,7 @@ set(SLASH "/")
 set(UNDER_BAR "_")
 
 set(${PROJECT_NAME}_${TEST_TYPE}_SOURCE_FILES
-  
+  utils
   # ! Add source files here
 )
 
@@ -31,7 +31,7 @@ endfunction()
 
 find_package(GTest REQUIRED HINTS ${GTest_CMAKE_PATH})
 
-# add_test_executable(${PROJECT_NAME}_${TEST_TYPE}_TESTS ${${PROJECT_NAME}_${TEST_TYPE}_SOURCE_FILES})
+add_test_executable(${PROJECT_NAME}_${TEST_TYPE}_TESTS ${${PROJECT_NAME}_${TEST_TYPE}_SOURCE_FILES})
 
 foreach(TEST_FILE_NAME ${${PROJECT_NAME}_${TEST_TYPE}_SOURCE_FILES})
   string(REPLACE ${SLASH} ${UNDER_BAR} TEST_FILE_NAME ${TEST_FILE_NAME})
